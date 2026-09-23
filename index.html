@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102a43">
+  <meta name="description" content="Proyecta tu saldo diario hasta la quincena y prueba cambios sin alterar tu plan original.">
+  <title>Hasta la quincena · Proyección de saldo</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23102a43'/%3E%3Cpath d='M14 40h12l7-20 7 20h10' fill='none' stroke='%236be0b3' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <a class="brand" href="#workspace" aria-label="Hasta la quincena, ir a la herramienta">
+        <span class="brand-mark" aria-hidden="true">∧</span>
+        <span>Hasta la quincena</span>
+      </a>
+      <p class="session-note"><span aria-hidden="true">●</span> <span data-i18n="sessionNote">Solo vive en esta pestaña</span></p>
+    </header>
+
+    <main id="workspace">
+      <section class="settings-bar" aria-labelledby="settings-heading">
+        <div class="settings-intro">
+          <p class="section-kicker" id="settings-heading" data-i18n="preferences">Preferencias</p>
+          <p data-i18n="preferencesHint">La moneda y el formato siguen el país elegido.</p>
+        </div>
+        <div class="settings-controls">
+          <label class="setting-field" for="country-select">
+            <span data-i18n="country">País</span>
+            <select id="country-select"></select>
+          </label>
+          <label class="setting-field" for="language-select">
+            <span data-i18n="language">Idioma</span>
+            <select id="language-select">
+              <option value="es">Español</option>
+              <option value="en">English</option>
+            </select>
+          </label>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">
+            <span class="theme-icon" aria-hidden="true">☾</span>
+            <span id="theme-toggle-text">Modo nocturno</span>
+          </button>
+        </div>
+      </section>
+
+      <div class="intro-row">
+        <div>
+          <p class="eyebrow" data-i18n="eyebrow">Proyección diaria de saldo</p>
+          <h1 data-i18n="headline">¿Cuánto te queda hasta cobrar?</h1>
+          <p class="intro-copy" data-i18n="introCopy">Anota lo que tienes, lo que entra y lo que sale. Verás el saldo después de cada día.</p>
+        </div>
+        <div class="view-switcher" role="tablist" aria-label="Plan que deseas consultar">
+          <button class="view-tab" id="tab-original" type="button" role="tab" aria-selected="true" aria-controls="plan-panel" data-i18n="originalPlan">Plan original</button>
+          <button class="view-tab" id="tab-simulation" type="button" role="tab" aria-selected="false" aria-controls="plan-panel" data-i18n="simulation">Simulación</button>
+        </div>
+      </div>
+
+      <div class="simulation-banner" id="simulation-banner" hidden>
+        <div>
+          <strong data-i18n="simulationBannerTitle">Estás probando una copia.</strong>
+          <span data-i18n="simulationBannerCopy">Los cambios de esta vista no alteran el plan original.</span>
+        </div>
+        <button class="button button-secondary button-small" id="reset-simulation" type="button" data-i18n="copyOriginal">Copiar de nuevo el original</button>
+      </div>
+
+      <div class="workspace-grid">
+        <section class="panel editor-panel" id="plan-panel" aria-labelledby="plan-heading">
+          <div class="panel-heading">
+            <div>
+              <p class="section-kicker" id="plan-kicker">Datos de trabajo</p>
+              <h2 id="plan-heading">Plan original</h2>
+              <p class="panel-description" id="example-note">Datos ficticios basados en la fecha de hoy.</p>
+            </div>
+            <button class="text-button" id="reset-example" type="button" data-i18n="resetExample">Restablecer ejemplo</button>
+          </div>
+
+          <div class="base-fields">
+            <div class="field-group">
+              <label for="start-balance" data-i18n="balanceToday">Saldo disponible hoy</label>
+              <div class="money-input">
+                <span class="currency-affix" aria-hidden="true">B/.</span>
+                <input id="start-balance" name="start-balance" type="text" inputmode="decimal" autocomplete="off" aria-describedby="start-balance-error">
+              </div>
+              <p class="field-error" id="start-balance-error"></p>
+            </div>
+            <div class="field-group">
+              <label for="period-select" data-i18n="planningPeriod">Período de planificación</label>
+              <select id="period-select" name="period-select" aria-describedby="period-hint">
+                <option value="fortnight" data-i18n="fortnightly">Quincenal · 15 días</option>
+                <option value="monthly" data-i18n="monthly">Mensual · 30 días</option>
+                <option value="custom" data-i18n="customPeriod">Fecha personalizada</option>
+              </select>
+              <p class="field-hint" id="period-hint">15 días, contando hoy.</p>
+            </div>
+            <div class="field-group">
+              <label for="end-date" data-i18n="projectUntil">Proyectar hasta</label>
+              <input id="end-date" name="end-date" type="date" aria-describedby="end-date-error">
+              <p class="field-error" id="end-date-error"></p>
+            </div>
+          </div>
+
+          <div class="movements-section">
+            <div class="section-title-row">
+              <div>
+                <h3 data-i18n="movements">Movimientos</h3>
+                <p class="small-muted" data-i18n="movementsHint">Cobros y pagos previstos dentro del período.</p>
+              </div>
+              <span class="movement-count" id="movement-count">0 de 60</span>
+            </div>
+
+            <div class="movement-list" id="movement-list"></div>
+
+            <div class="add-actions">
+              <button class="button button-secondary" id="add-expense" type="button"><span aria-hidden="true">−</span> <span data-i18n="addExpense">Añadir pago</span></button>
+              <button class="button button-primary" id="add-income" type="button"><span aria-hidden="true">+</span> <span data-i18n="addIncome">Añadir cobro</span></button>
+            </div>
+            <p class="form-status" id="form-status" role="alert" aria-live="polite"></p>
+          </div>
+        </section>
+
+        <section class="panel results-panel" aria-labelledby="results-heading">
+          <div class="panel-heading results-heading-row">
+            <div>
+              <p class="section-kicker" data-i18n="result">Resultado</p>
+              <h2 id="results-heading" data-i18n="dailyMargin">Tu margen día a día</h2>
+            </div>
+            <span class="active-view-badge" id="active-view-badge">Plan original</span>
+          </div>
+
+          <div class="summary-card" aria-live="polite">
+            <div class="summary-main">
+              <p class="summary-label" id="summary-label">Primer día con saldo negativo</p>
+              <p class="summary-value" id="summary-value">—</p>
+              <p class="summary-detail" id="summary-detail"></p>
+            </div>
+            <div class="summary-final">
+              <span data-i18n="finalBalance">Saldo al final</span>
+              <strong id="final-balance">—</strong>
+            </div>
+          </div>
+
+          <div class="estimate-card" id="estimate-card" hidden>
+            <div class="estimate-icon" aria-hidden="true">≈</div>
+            <div>
+              <strong data-i18n="withoutEstimated">Escenario sin cobros estimados</strong>
+              <p id="estimate-copy"></p>
+            </div>
+          </div>
+
+          <div class="comparison-card" id="comparison-card" hidden>
+            <div class="comparison-title-row">
+              <h3 data-i18n="comparisonTitle">Original frente a simulación</h3>
+              <span data-i18n="comparison">Comparación</span>
+            </div>
+            <div class="comparison-grid">
+              <div class="comparison-column">
+                <span data-i18n="originalPlan">Plan original</span>
+                <strong id="original-final">—</strong>
+                <small id="original-negative">—</small>
+              </div>
+              <div class="comparison-column comparison-simulation">
+                <span data-i18n="simulation">Simulación</span>
+                <strong id="simulation-final">—</strong>
+                <small id="simulation-negative">—</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="daily-section">
+            <div class="daily-title-row">
+              <div>
+                <h3 data-i18n="endOfDayBalance">Saldo al terminar cada día</h3>
+                <p data-i18n="sameDayNote">Los movimientos del mismo día se agrupan. El banco podría procesarlos en otro orden.</p>
+              </div>
+              <span class="period-count" id="period-count"></span>
+            </div>
+            <div class="daily-list" id="daily-list" aria-label="Saldos diarios"></div>
+          </div>
+
+          <aside class="disclaimer">
+            <strong data-i18n="keepInMind">Ten presente:</strong> <span data-i18n="disclaimer">es una estimación basada en lo que introduces. No comprueba cargos bancarios ni decide qué obligación pagar. Los datos se pierden al actualizar o cerrar esta pestaña.</span>
+          </aside>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <template id="movement-template">
+    <article class="movement-card">
+      <div class="movement-head">
+        <span class="movement-kind"></span>
+        <button class="remove-button" type="button" data-i18n="remove">Eliminar</button>
+      </div>
+      <div class="movement-fields">
+        <div class="field-group movement-description-field">
+          <label data-i18n="description">Descripción</label>
+          <input class="movement-description" type="text" maxlength="80" autocomplete="off">
+          <p class="field-error movement-description-error"></p>
+        </div>
+        <div class="field-group">
+          <label data-i18n="type">Tipo</label>
+          <select class="movement-type">
+            <option value="expense" data-i18n="expense">Pago</option>
+            <option value="income" data-i18n="income">Cobro</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label data-i18n="date">Fecha</label>
+          <input class="movement-date" type="date">
+          <p class="field-error movement-date-error"></p>
+        </div>
+        <div class="field-group">
+          <label data-i18n="amount">Importe</label>
+          <div class="money-input compact-money-input">
+            <span class="currency-affix" aria-hidden="true">B/.</span>
+            <input class="movement-amount" type="text" inputmode="decimal" autocomplete="off">
+          </div>
+          <p class="field-error movement-amount-error"></p>
+        </div>
+      </div>
+      <label class="estimated-toggle">
+        <input class="movement-estimated" type="checkbox">
+        <span>
+          <strong data-i18n="estimatedIncome">Es un cobro estimado</strong>
+          <small data-i18n="estimatedIncomeHint">No lo cuentes como dinero garantizado.</small>
+        </span>
+      </label>
+    </article>
+  </template>
+
+  <script src="core.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
