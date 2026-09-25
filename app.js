@@ -10,7 +10,7 @@
     projectPlan,
     toISO,
     validatePlan,
-  } = window.HastaCore;
+  } = window.CashPlanCore;
 
   const $ = (id) => document.getElementById(id);
   const today = toISO(new Date());
@@ -41,7 +41,7 @@
       today: "Hoy", noMovements: "Sin movimientos", day: "día", days: "días", movement: "movimiento", negativeDay: "Primer día negativo: {date}", noNegativeDays: "Sin días negativos",
       missingThatDay: "Al terminar ese día faltarían {amount}.", noShortfall: "No falta dinero en el período", favorableBalance: "Saldo favorable", staysPositive: "El saldo no baja de cero hasta el {date}.",
       withoutOneEstimated: "Sin contar ese cobro, {negative} y el saldo final sería {amount}.", withoutManyEstimated: "Sin contar esos cobros, {negative} y el saldo final sería {amount}.", wouldBeNegative: "el primer día negativo sería el {date}", wouldStayPositive: "no habría días negativos en el período",
-      deleteItem: "Eliminar {description}", dailyBalancesLabel: "Saldos diarios", viewTabsLabel: "Plan que deseas consultar", brandLabel: "Hasta la quincena, ir a la herramienta",
+      deleteItem: "Eliminar {description}", dailyBalancesLabel: "Saldos diarios", viewTabsLabel: "Plan que deseas consultar", brandLabel: "CashPlan, ir a la herramienta",
       pendingPayment: "Pago pendiente", necessaryPurchase: "Compra necesaria", groceries: "Supermercado", nextIncome: "Próximo cobro",
     },
     en: {
@@ -59,7 +59,7 @@
       today: "Today", noMovements: "No transactions", day: "day", days: "days", movement: "transaction", negativeDay: "First negative day: {date}", noNegativeDays: "No negative days", 
       missingThatDay: "At the end of that day, you would be short {amount}.", noShortfall: "No shortfall in this period", favorableBalance: "Positive balance", staysPositive: "The balance does not fall below zero through {date}.",
       withoutOneEstimated: "Without counting that income, {negative} and the ending balance would be {amount}.", withoutManyEstimated: "Without counting those income items, {negative} and the ending balance would be {amount}.", wouldBeNegative: "the first negative day would be {date}", wouldStayPositive: "there would be no negative days in the period",
-      deleteItem: "Remove {description}", dailyBalancesLabel: "Daily balances", viewTabsLabel: "Plan to view", brandLabel: "Hasta la quincena, go to the tool",
+      deleteItem: "Remove {description}", dailyBalancesLabel: "Daily balances", viewTabsLabel: "Plan to view", brandLabel: "CashPlan, go to the tool",
       pendingPayment: "Pending payment", necessaryPurchase: "Necessary purchase", groceries: "Groceries", nextIncome: "Next income",
     },
   };
@@ -200,8 +200,8 @@
     populateCountries();
     elements.languageSelect.value = settings.language;
     document.title = settings.language === "es"
-      ? "Hasta la quincena · Proyección de saldo"
-      : "Hasta la quincena · Balance projection";
+      ? "CashPlan · Proyección de saldo"
+      : "CashPlan · Balance projection";
     document.querySelector('meta[name="description"]').content = settings.language === "es"
       ? "Proyecta tu saldo diario y prueba cambios sin alterar tu plan original."
       : "Project your daily balance and test changes without altering your original plan.";

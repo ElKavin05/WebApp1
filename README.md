@@ -1,4 +1,4 @@
-# Hasta la quincena
+# CashPlan
 
 Aplicación web local para proyectar el saldo al final de cada día, detectar el primer saldo negativo y probar cambios en una simulación separada.
 
