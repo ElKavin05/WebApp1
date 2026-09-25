@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102a43">
+  <meta name="description" content="Cada fila responde cuánto quedaría al terminar ese día si se cumplen los movimientos que has introducido.">
+  <title>Cómo leer el saldo diario · CashPlan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<div class="app-shell">
+<header class="app-header navbar">
+      <a class="brand" href="index.html#workspace" aria-label="CashPlan, ir a la herramienta"><span class="brand-mark" aria-hidden="true">∧</span><span>CashPlan</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" hidden><span class="menu-icon" aria-hidden="true">☰</span> <span>Menú</span></button>
+      <nav id="primary-navigation" class="site-nav" aria-label="Navegación principal">
+        <a href="index.html#workspace">Herramienta</a><a href="como-funciona.html">Cómo funciona</a><a href="guias.html">Aprende a planificar</a><a href="acerca.html">Acerca de</a><a href="contacto.html">Contacto</a>
+      </nav>
+    </header>
+<main id="contenido" class="content-page"><p class="eyebrow">CashPlan · Aprende a planificar</p><h1>Cómo leer el saldo diario</h1><p class="content-lead">Cada fila responde cuánto quedaría al terminar ese día si se cumplen los movimientos que has introducido.</p>
+<section><h2>¿Cómo se calcula cada fila?</h2><p>Saldo de cierre = saldo del día anterior + cobros del día − pagos del día. Hoy se parte del saldo inicial que escribes. Los días sin movimientos conservan el saldo del cierre anterior; no significan que el sistema haya dejado de calcular.</p><p>Con 150 disponibles y un pago de 50 mañana, mañana termina en 100. Si al día siguiente pagas 55, termina en 45. Un pago posterior de 70 deja −25.</p></section>
+<section><h2>¿Qué significa el primer saldo negativo?</h2><p>Es la primera fecha cuyo cierre queda por debajo de cero. Un saldo de −25 representa un faltante previsto de 25, no una comisión bancaria ni un sobregiro autorizado. Un saldo exactamente igual a cero no se señala como negativo, pero tampoco deja margen para gastos que hayas omitido.</p><p>La tarjeta principal muestra la primera fecha negativa, no necesariamente el peor faltante. Revisa las filas posteriores: otro pago podría aumentar el déficit antes del próximo ingreso.</p></section>
+<section><h2>¿Por qué puedo terminar en positivo y aun así tener un problema?</h2><p>Porque las fechas importan. En el ejemplo de CashPlan, el saldo cae a −25 el día 4 y sube a 575 el día 8. El saldo final no borra los cuatro días de faltante. Comprueba cuándo necesitas el dinero, no solo cuánto habrá al final.</p></section>
+<section><h2>¿Un cierre positivo garantiza que se pagará un cargo?</h2><p>No. Con 20 al empezar el día, un cargo de 80 y un cobro de 100 en esa fecha, el cierre proyectado es 40. Si el banco procesa primero el cargo, los 20 iniciales podrían no alcanzar. CashPlan agrupa los movimientos por fecha y no simula horas, retenciones, límites de cuenta ni el orden bancario.</p></section>
+<section><h2>¿Qué reviso si el resultado no coincide con mi cuenta?</h2><p>Comprueba el saldo disponible inicial, las fechas, los importes y los movimientos duplicados u omitidos. Introduce también las comisiones o intereses que conozcas: no se calculan automáticamente. Si hay un campo inválido, corrígelo antes de interpretar el resultado.</p><p>CashPlan es una proyección manual; no concilia transacciones con el banco ni recomienda qué obligación pagar.</p></section>
+<p>Vuelve a <a href="guias.html">las guías</a> o consulta <a href="contacto.html">cómo reportar un error</a>.</p></main>
+<footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-about"><a class="brand" href="index.html#workspace" aria-label="CashPlan, ir a la herramienta"><span class="brand-mark" aria-hidden="true">∧</span><span>CashPlan</span></a><p>Planifica hoy.<br>Entiende tu saldo de mañana.</p><p class="footer-project">Un proyecto de CirenCore.</p></div>
+        <nav class="footer-links" aria-label="Recursos"><h2>Recursos</h2><a href="index.html#workspace">Herramienta</a><a href="como-funciona.html">Cómo funciona</a><a href="guias.html">Aprende a planificar</a></nav>
+        <nav class="footer-links" aria-label="Información"><h2>Información</h2><a href="acerca.html">Acerca de CashPlan</a><a href="privacidad.html">Política de privacidad</a><a href="contacto.html">Contacto</a></nav>
+        <div class="footer-contact"><h2>Hablemos</h2><p>¿Encontraste un error o tienes una idea?</p><a href="mailto:cirencore.contact@gmail.com">cirencore.contact@gmail.com</a><p>No incluyas datos bancarios en tu mensaje.</p></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 CirenCore. Todos los derechos reservados.</p><p>CashPlan ofrece proyecciones; no se conecta a tu banco.</p></div>
+    </footer>
+</div>
+  <script src="navigation.js"></script>
+</body>
+</html>

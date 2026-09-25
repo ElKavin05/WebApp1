@@ -10,14 +10,16 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#workspace">Saltar al contenido</a>
   <div class="app-shell">
-    <header class="app-header">
-      <a class="brand" href="#workspace" aria-label="CashPlan, ir a la herramienta">
-        <span class="brand-mark" aria-hidden="true">∧</span>
-        <span>CashPlan</span>
-      </a>
-      <p class="session-note"><span aria-hidden="true">●</span> <span data-i18n="sessionNote">Solo vive en esta pestaña</span></p>
+    <header class="app-header navbar">
+      <a class="brand" href="#workspace" aria-label="CashPlan, ir a la herramienta"><span class="brand-mark" aria-hidden="true">∧</span><span>CashPlan</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" hidden><span class="menu-icon" aria-hidden="true">☰</span> <span>Menú</span></button>
+      <nav id="primary-navigation" class="site-nav" aria-label="Navegación principal">
+        <a href="#workspace" aria-current="page">Herramienta</a><a href="como-funciona.html" target="_blank" rel="noopener">Cómo funciona</a><a href="guias.html" target="_blank" rel="noopener">Aprende a planificar</a><a href="acerca.html" target="_blank" rel="noopener">Acerca de</a><a href="contacto.html" target="_blank" rel="noopener">Contacto</a>
+      </nav>
     </header>
+    <p class="navigation-note" data-i18n="helpNavigation">La ayuda y las páginas informativas se abren en otra pestaña para mantener tu plan abierto.</p>
 
     <main id="workspace">
       <section class="settings-bar" aria-labelledby="settings-heading">
@@ -184,6 +186,15 @@
         </section>
       </div>
     </main>
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-about"><a class="brand" href="#workspace" aria-label="CashPlan, ir a la herramienta"><span class="brand-mark" aria-hidden="true">∧</span><span>CashPlan</span></a><p>Planifica hoy.<br>Entiende tu saldo de mañana.</p><p class="footer-project">Un proyecto de CirenCore.</p></div>
+        <nav class="footer-links" aria-label="Recursos"><h2>Recursos</h2><a href="#workspace" aria-current="page">Herramienta</a><a href="como-funciona.html" target="_blank" rel="noopener">Cómo funciona</a><a href="guias.html" target="_blank" rel="noopener">Aprende a planificar</a></nav>
+        <nav class="footer-links" aria-label="Información"><h2>Información</h2><a href="acerca.html" target="_blank" rel="noopener">Acerca de CashPlan</a><a href="privacidad.html" target="_blank" rel="noopener">Política de privacidad</a><a href="contacto.html" target="_blank" rel="noopener">Contacto</a></nav>
+        <div class="footer-contact"><h2>Hablemos</h2><p>¿Encontraste un error o tienes una idea?</p><a href="mailto:cirencore.contact@gmail.com">cirencore.contact@gmail.com</a><p>No incluyas datos bancarios en tu mensaje.</p></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 CirenCore. Todos los derechos reservados.</p><p>CashPlan ofrece proyecciones; no se conecta a tu banco.</p></div>
+    </footer>
   </div>
 
   <template id="movement-template">
@@ -231,5 +242,6 @@
 
   <script src="core.js"></script>
   <script src="app.js"></script>
+  <script src="navigation.js"></script>
 </body>
 </html>

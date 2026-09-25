@@ -1,0 +1,26 @@
+{
+  "tool": "Built-in image_gen",
+  "style": "Landscape 3:2, softly textured cut-paper editorial illustration; navy #102a43, mint #86e4c0, off-white #f3f7f8, sand and coral; centered crop-safe composition, soft daylight, no words, numbers, logos or watermarks.",
+  "subjects": [
+    {
+      "file": "dinero-hasta-proximo-cobro.png",
+      "prompt": "An open wallet beside a seven-day row of blank calendar tiles and gradually smaller stacks of coins, ending in a mint envelope representing payday."
+    },
+    {
+      "file": "planificacion-quincenal.png",
+      "prompt": "A desktop calendar with two distinct fortnight blocks, payment slips neatly organized around it and modest stacks of coins, suggesting organizing bills around payday."
+    },
+    {
+      "file": "cobro-retrasado.png",
+      "prompt": "Two parallel paper calendar timelines on a desk, one mint envelope arriving earlier and another arriving later beside a small clock, illustrating a delayed payment comparison."
+    },
+    {
+      "file": "planificacion-papel-digital.png",
+      "prompt": "An open handwritten-style notebook with abstract lines and check marks beside a tablet showing abstract daily balance bars, pencil and a few coins; paper planning meets digital planning."
+    },
+    {
+      "file": "errores-dinero-disponible.png",
+      "prompt": "A magnifying glass over paper payment slips, a calculator and modest coin stacks, with one duplicated slip gently highlighted in coral, illustrating reviewing a budget for mistakes."
+    }
+  ]
+}

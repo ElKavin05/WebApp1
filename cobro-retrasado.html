@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102a43">
+  <meta name="description" content="El mismo total de ingresos puede producir días de faltante si cambia la fecha. Compara un plan original y una simulación con tres días de retraso.">
+  <title>Qué cambia si un cobro se retrasa · CashPlan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<div class="app-shell">
+<header class="app-header navbar">
+      <a class="brand" href="index.html#workspace" aria-label="CashPlan, ir a la herramienta"><span class="brand-mark" aria-hidden="true">∧</span><span>CashPlan</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" hidden><span class="menu-icon" aria-hidden="true">☰</span> <span>Menú</span></button>
+      <nav id="primary-navigation" class="site-nav" aria-label="Navegación principal">
+        <a href="index.html#workspace">Herramienta</a><a href="como-funciona.html">Cómo funciona</a><a href="guias.html" aria-current="true">Aprende a planificar</a><a href="acerca.html">Acerca de</a><a href="contacto.html">Contacto</a>
+      </nav>
+    </header>
+<main id="contenido" class="content-page article-page">
+<nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="guias.html">Aprende a planificar</a><span aria-hidden="true">/</span><span>Simulaciones</span></nav>
+<article><header class="article-header"><p class="eyebrow">Simulaciones</p><h1>Qué cambia si un cobro se retrasa</h1><p class="content-lead">El mismo total de ingresos puede producir días de faltante si cambia la fecha. Compara un plan original y una simulación con tres días de retraso.</p><p class="article-meta">Por <a href="acerca.html">CirenCore</a> · <time datetime="2026-09-24">24 de septiembre de 2026</time></p></header>
+<figure class="article-cover"><img src="assets/blog/cobro-retrasado.png" alt="Dos calendarios comparan la llegada de un cobro en fechas distintas." width="1536" height="1024" fetchpriority="high" decoding="async"></figure>
+<p class="example-label">Ejemplo educativo con importes ficticios en una misma moneda. El día 1 representa hoy.</p>
+
+<section><h2>1. Prepara el plan original</h2><p>Mar tiene 120 disponibles, espera un cobro de 250 el día 3 y prevé pagar 180 el día 4 y 60 el día 5. El período llega hasta el día 7. Si todo ocurre en esas fechas, termina con 130 y no tiene cierres negativos.</p><p>Registra ese escenario en el original. Si el cobro no está confirmado, márcalo como estimado; la proyección principal lo incluirá y podrás consultar también el resultado sin ese ingreso.</p></section>
+<section><h2>2. Cambia solamente la fecha del cobro</h2><p>Abre «Simulación» y mueve el cobro del día 3 al día 6. Conserva el saldo inicial, los pagos y la fecha final para aislar el efecto del retraso. Si tu simulación contiene cambios anteriores que quieres descartar, «Copiar de nuevo el original» los reemplaza.</p><div class="table-scroll" role="region" aria-label="Mismos importes, distintas fechas de cobro" tabindex="0"><table><caption>Mismos importes, distintas fechas de cobro</caption><thead><tr><th scope="col">Día</th><th scope="col">Original: cobra el día 3</th><th scope="col">Simulación: cobra el día 6</th></tr></thead><tbody><tr><th scope="row">1</th><td>120</td><td>120</td></tr><tr><th scope="row">2</th><td>120</td><td>120</td></tr><tr><th scope="row">3</th><td>370</td><td>120</td></tr><tr><th scope="row">4</th><td>190</td><td>−60 · Primer faltante</td></tr><tr><th scope="row">5</th><td>130</td><td>−120</td></tr><tr><th scope="row">6</th><td>130</td><td>130</td></tr><tr><th scope="row">7</th><td>130</td><td>130</td></tr></tbody></table></div><p>Ambos planes terminan en 130. La diferencia está en el recorrido: la simulación tiene dos cierres negativos y su mayor faltante es de 120 el día 5. Mirar únicamente el saldo final no revelaría el problema.</p></section>
+<section><h2>3. Distingue retraso de ausencia del cobro</h2><p>Si marcas el ingreso como estimado, el escenario sin estimados excluye los 250 durante todo el período y termina en −120. Esa prueba responde «¿y si no llega?». Mover la fecha en la simulación responde «¿y si llega más tarde?».</p><p>Si el ingreso llegaría después de la fecha final, amplía el período de ambos planes para comparar el mismo horizonte. El escenario sin estimados elimina todos los ingresos marcados; no calcula la probabilidad de cada uno.</p></section>
+<section><h2>4. Usa la diferencia para revisar las fechas reales</h2><p>Comprueba con quien paga qué fecha puedes considerar y revisa los vencimientos. Cambiar un pago en CashPlan no modifica el compromiso real. Tampoco basta con colocar cobro y cargo el mismo día: el banco podría procesar primero el cargo.</p></section>
+<section class="content-note"><h2>Qué puedes hacer hoy</h2><p>Duplica tu previsión y retrasa el cobro incierto unos días. Anota el primer día negativo y el mayor faltante del período, además del saldo final. Usa esas fechas para revisar tu plan real.</p></section>
+<p class="content-actions"><a class="button button-primary" href="index.html#workspace">Probar en CashPlan</a><a href="como-funciona.html">Cómo usar la herramienta</a></p>
+<p class="small-muted">El plan se mantiene en la memoria de la pestaña; no se guarda al actualizar o cerrar. CashPlan no consulta el banco ni garantiza el orden de los cargos.</p>
+<nav class="article-related" aria-label="Lecturas relacionadas"><h2>Sigue aprendiendo</h2><a href="cobros-estimados.html">Cómo funciona la marca de cobro estimado</a><a href="dinero-hasta-proximo-cobro.html">Revisar el dinero hasta el próximo cobro</a><a href="guias.html">Ver todos los artículos</a></nav></article></main>
+<footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-about"><a class="brand" href="index.html#workspace" aria-label="CashPlan, ir a la herramienta"><span class="brand-mark" aria-hidden="true">∧</span><span>CashPlan</span></a><p>Planifica hoy.<br>Entiende tu saldo de mañana.</p><p class="footer-project">Un proyecto de CirenCore.</p></div>
+        <nav class="footer-links" aria-label="Recursos"><h2>Recursos</h2><a href="index.html#workspace">Herramienta</a><a href="como-funciona.html">Cómo funciona</a><a href="guias.html" aria-current="true">Aprende a planificar</a></nav>
+        <nav class="footer-links" aria-label="Información"><h2>Información</h2><a href="acerca.html">Acerca de CashPlan</a><a href="privacidad.html">Política de privacidad</a><a href="contacto.html">Contacto</a></nav>
+        <div class="footer-contact"><h2>Hablemos</h2><p>¿Encontraste un error o tienes una idea?</p><a href="mailto:cirencore.contact@gmail.com">cirencore.contact@gmail.com</a><p>No incluyas datos bancarios en tu mensaje.</p></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 CirenCore. Todos los derechos reservados.</p><p>CashPlan ofrece proyecciones; no se conecta a tu banco.</p></div>
+    </footer>
+</div>
+  <script src="navigation.js"></script>
+</body>
+</html>

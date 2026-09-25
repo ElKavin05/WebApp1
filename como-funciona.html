@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102a43">
+  <meta name="description" content="Un ejemplo completo para detectar un faltante de dinero y probar un cambio sin modificar tu plan original.">
+  <title>Cómo funciona · CashPlan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<div class="app-shell">
+<header class="app-header navbar">
+      <a class="brand" href="index.html#workspace" aria-label="CashPlan, ir a la herramienta"><span class="brand-mark" aria-hidden="true">∧</span><span>CashPlan</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" hidden><span class="menu-icon" aria-hidden="true">☰</span> <span>Menú</span></button>
+      <nav id="primary-navigation" class="site-nav" aria-label="Navegación principal">
+        <a href="index.html#workspace">Herramienta</a><a href="como-funciona.html" aria-current="page">Cómo funciona</a><a href="guias.html">Aprende a planificar</a><a href="acerca.html">Acerca de</a><a href="contacto.html">Contacto</a>
+      </nav>
+    </header>
+<main id="contenido" class="content-page"><p class="eyebrow">CashPlan · Aprende a planificar</p><h1>Cómo funciona</h1><p class="content-lead">Un ejemplo completo para detectar un faltante de dinero y probar un cambio sin modificar tu plan original.</p>
+<section><h2>1. Parte del dinero disponible hoy</h2><p>CashPlan empieza hoy y calcula el saldo al terminar cada día. El ejemplo que aparece al abrir la herramienta tiene un saldo inicial de <strong>150,00</strong> y un período de 15 días, contando hoy. Todos los importes de esta explicación están expresados en una misma moneda; son ficticios.</p><p>Usa el saldo disponible, no el límite de una tarjeta ni un cobro que todavía no llegó. Si un pago ya está descontado de ese saldo, no lo vuelvas a añadir.</p></section>
+<section><h2>2. Coloca los pagos y el cobro en sus fechas</h2><p>Las fechas del ejemplo se adaptan al día en que abras la herramienta. «Día 1» es hoy; «día 8» es dentro de siete días.</p>
+<div class="table-scroll" role="region" aria-label="Ejemplo de saldo diario" tabindex="0"><table><caption>Plan original: 150,00 de saldo inicial</caption><thead><tr><th scope="col">Día</th><th scope="col">Movimiento</th><th scope="col">Saldo al cierre</th></tr></thead><tbody>
+<tr><th scope="row">1 · Hoy</th><td>Sin movimientos</td><td>150,00</td></tr>
+<tr><th scope="row">2</th><td>Pago pendiente: −50,00</td><td>100,00</td></tr>
+<tr><th scope="row">3</th><td>Compra necesaria: −55,00</td><td>45,00</td></tr>
+<tr class="shortfall-row"><th scope="row">4</th><td>Supermercado: −70,00</td><td><strong>−25,00 · Primer déficit</strong></td></tr>
+<tr><th scope="row">5 a 7</th><td>Sin movimientos</td><td>−25,00 cada día</td></tr>
+<tr><th scope="row">8</th><td>Próximo cobro: +600,00</td><td>575,00</td></tr>
+<tr><th scope="row">9 a 15</th><td>Sin movimientos</td><td>575,00 cada día</td></tr>
+</tbody></table></div><p>El cálculo final es 150 − 50 − 55 − 70 + 600 = <strong>575</strong>. Aunque el período termina en positivo, del día 4 al 7 faltarían 25. Un ingreso posterior no resuelve automáticamente un pago anterior.</p></section>
+<section><h2>3. Interpreta el primer día negativo</h2><p>La tarjeta principal señala el día 4 y un faltante de 25. Es una alerta de que el plan no alcanza con los datos introducidos, no una predicción de que el banco autorizará un sobregiro. Revisa fechas, pagos omitidos y disponibilidad real antes de actuar.</p><p>Los movimientos de una misma fecha se suman para mostrar el cierre. Un cierre positivo no garantiza que hubiera dinero suficiente a primera hora: CashPlan no conoce el orden de procesamiento del banco.</p></section>
+<section><h2>4. Prueba un cambio en «Simulación»</h2><p>Conserva el ejemplo en «Plan original» y abre «Simulación». Para este ejercicio, cambia solamente el pago de supermercado de 70 a 40. El día 4 termina en <strong>5</strong>, desaparecen los días negativos y el saldo final sube a <strong>605</strong>. El original sigue terminando en 575 y mantiene su primer déficit en el día 4.</p><p>Esto representa gastar 30 menos, no aplazar esa parte del gasto. Si solo pagarás los 30 más adelante, añade otro pago en la fecha correspondiente: el dinero sigue comprometido. Solo prueba cambios que puedas realizar; la herramienta no modifica pagos reales.</p><p>«Copiar de nuevo el original» reemplaza los cambios de la simulación con el plan original. Compara ambos usando la misma fecha final para que el saldo final tenga el mismo horizonte.</p></section>
+<section><h2>5. Pon a prueba los cobros inciertos</h2><p>Marca el cobro de 600 como estimado. La proyección principal seguirá incluyéndolo, pero el escenario sin cobros estimados terminará en <strong>−25</strong>. La etiqueta sirve para distinguir una expectativa de dinero disponible; no calcula una probabilidad de cobro.</p></section>
+<aside class="content-note"><strong>Antes de salir:</strong> el plan no se guarda. Actualizar, cerrar o salir de la herramienta puede hacerte perder los datos. Desde la herramienta, los enlaces informativos se abren en otra pestaña para que puedas consultar la ayuda manteniendo tu plan abierto.</aside>
+<p class="content-actions"><a class="button button-primary" href="index.html#workspace">Abrir la herramienta</a><a href="guias.html">Consultar las guías</a></p></main>
+<footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-about"><a class="brand" href="index.html#workspace" aria-label="CashPlan, ir a la herramienta"><span class="brand-mark" aria-hidden="true">∧</span><span>CashPlan</span></a><p>Planifica hoy.<br>Entiende tu saldo de mañana.</p><p class="footer-project">Un proyecto de CirenCore.</p></div>
+        <nav class="footer-links" aria-label="Recursos"><h2>Recursos</h2><a href="index.html#workspace">Herramienta</a><a href="como-funciona.html" aria-current="page">Cómo funciona</a><a href="guias.html">Aprende a planificar</a></nav>
+        <nav class="footer-links" aria-label="Información"><h2>Información</h2><a href="acerca.html">Acerca de CashPlan</a><a href="privacidad.html">Política de privacidad</a><a href="contacto.html">Contacto</a></nav>
+        <div class="footer-contact"><h2>Hablemos</h2><p>¿Encontraste un error o tienes una idea?</p><a href="mailto:cirencore.contact@gmail.com">cirencore.contact@gmail.com</a><p>No incluyas datos bancarios en tu mensaje.</p></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 CirenCore. Todos los derechos reservados.</p><p>CashPlan ofrece proyecciones; no se conecta a tu banco.</p></div>
+    </footer>
+</div>
+  <script src="navigation.js"></script>
+</body>
+</html>

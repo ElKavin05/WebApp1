@@ -27,6 +27,7 @@
   const numberLocales = { PA: "es-PA", US: "en-US", MX: "es-MX", CO: "es-CO", CR: "es-CR", DO: "es-DO", ES: "es-ES", GB: "en-GB" };
   const copy = {
     es: {
+      helpNavigation: "La ayuda y las páginas informativas se abren en otra pestaña para mantener tu plan abierto.",
       sessionNote: "Solo vive en esta pestaña", preferences: "Preferencias", preferencesHint: "La moneda y el formato siguen el país elegido.", country: "País", language: "Idioma", darkMode: "Modo nocturno", lightMode: "Modo claro",
       eyebrow: "Proyección diaria de saldo", headline: "¿Cuánto te queda hasta cobrar?", introCopy: "Anota lo que tienes, lo que entra y lo que sale. Verás el saldo después de cada día.",
       originalPlan: "Plan original", simulation: "Simulación", simulationBannerTitle: "Estás probando una copia.", simulationBannerCopy: "Los cambios de esta vista no alteran el plan original.", copyOriginal: "Copiar de nuevo el original",
@@ -45,6 +46,7 @@
       pendingPayment: "Pago pendiente", necessaryPurchase: "Compra necesaria", groceries: "Supermercado", nextIncome: "Próximo cobro",
     },
     en: {
+      helpNavigation: "Help and information pages are in Spanish and open in another tab to keep your plan open.",
       sessionNote: "Only available in this tab", preferences: "Preferences", preferencesHint: "Currency and number formats follow the selected country.", country: "Country", language: "Language", darkMode: "Dark mode", lightMode: "Light mode",
       eyebrow: "Daily balance projection", headline: "How much will you have left until payday?", introCopy: "Enter what you have, what is coming in and what is going out. You will see your balance at the end of each day.",
       originalPlan: "Original plan", simulation: "Simulation", simulationBannerTitle: "You are testing a copy.", simulationBannerCopy: "Changes in this view do not affect the original plan.", copyOriginal: "Copy the original again",
